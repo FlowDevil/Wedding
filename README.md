@@ -2,12 +2,13 @@
 # Task Checklist
 
 ## Today's Tasks
-- [ ] Slide-up memory gallery
+- [ ] Design for the memory gallery
+- [ ] Creating the Slideshow
 
 ## Future Tasks
 - [ ] Make the memory nodes at the bottom of the screen
 - [ ] Slideshow on click
 - [ ] Starting animations
 - [ ] Transition between screens
-- [ ] Design for the memory gallery
-- [ ] Creating the Slideshow
+- [ ] Make the scroll smoother
+
