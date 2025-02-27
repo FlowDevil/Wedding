@@ -2,7 +2,9 @@ package com.example.weddingfinal
 
 import android.content.Context
 import android.content.Intent
+import android.view.GestureDetector
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 class MemoryAdapter(private val context: Context, private val itemList: List<MemoryItem>) :
     RecyclerView.Adapter<MemoryAdapter.MemoryViewHolder>() {
 
+    private var startY = 0f
+    private val swipeThreshold = 100
     class MemoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val itemImage: ImageView = view.findViewById(R.id.imageView3)
         val itemTitle: TextView = view.findViewById(R.id.titletv)
@@ -31,9 +35,18 @@ class MemoryAdapter(private val context: Context, private val itemList: List<Mem
 
         holder.itemView.setOnClickListener {
             val intent = when (position) {
-                0 -> Intent(context, Memory1Activity::class.java)  // First item -> PreWeddingActivity
-                1 -> Intent(context, Memory2Activity::class.java)  // Second item -> WeddingDayActivity
-                2 -> Intent(context, Memory3Activity::class.java)  // Third item -> ReceptionActivity
+                0 -> Intent(
+                    context,
+                    Memory1Activity::class.java
+                )  // First item -> PreWeddingActivity
+                1 -> Intent(
+                    context,
+                    Memory2Activity::class.java
+                )  // Second item -> WeddingDayActivity
+                2 -> Intent(
+                    context,
+                    Memory3Activity::class.java
+                )  // Third item -> ReceptionActivity
                 else -> null
             }
             intent?.let { context.startActivity(it) }
@@ -42,3 +55,4 @@ class MemoryAdapter(private val context: Context, private val itemList: List<Mem
 
     override fun getItemCount(): Int = itemList.size
 }
+
